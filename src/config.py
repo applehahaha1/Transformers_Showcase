@@ -12,13 +12,15 @@ VALID_BATCH_SIZE = 4
 EPOCHS = 10
 
 # define path to BERT model files
-BERT_PATH = "../input/bert-base-uncased/"
+BERT_PATH = "./input/bert-base-uncased/"
+# BERT_PATH = "bert-base-uncased"
 
 # model name
-MODEL_PATH = "model.bin"
+# MODEL_PATH = "model.bin"
+MODEL_PATH = "model..safetensors"
 
 # define path to dataset
-TRAINING_FILE = "../input/imdb.csv"
+TRAINING_FILE = "./input/imdb.csv"
 
 # define tokenizer
 TOKENIZER = transformers.BertTokenizer.from_pretrained(

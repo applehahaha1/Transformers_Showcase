@@ -62,7 +62,7 @@ class BERTDataset:
         ids = inputs['input_ids']
 
         # mask is 1 where we have input and 0 where we have padding
-        mask = inputs['attention_mask']
+        masks = inputs['attention_mask']
 
         # token type ids behave the same way as mask in this specific case
         # in case of two sentences, this is 0 for first sentence and 1 for second sentence
@@ -71,7 +71,7 @@ class BERTDataset:
         # note that ids, mask and token_type_ids are all long datatypes and targets is float
         return {
             'ids': torch.tensor(ids, dtype=torch.long),
-            'mask': torch.tensor(mask, dtype=torch.long),
-            'token_type_ids': torch.tensor(token_type_ids, dytype= torch.long),
+            'masks': torch.tensor(masks, dtype=torch.long),
+            'token_type_ids': torch.tensor(token_type_ids, dtype= torch.long),
             'target': torch.tensor(target, dtype=torch.long)
         }
